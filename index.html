@@ -70,11 +70,12 @@
 
   /* ── The "logo". Yes, it's ASCII art. ── */
   .logo {
-    font-size: 14px;
+    font-size: clamp(9px, 1.7vw, 14px); /* scales so it fits every screen */
     line-height: 1.2;
     color: var(--red);
     white-space: pre;          /* please don't wrap, thanks */
     display: block;
+    overflow-x: auto;          /* never breaks on tiny screens */
   }
 
   /* ── Info table. More flexible than my schedule. ── */
@@ -153,10 +154,9 @@
       gap: 1.5rem 0;
     }
 
-    /* Phones are small. This makes it fit. You're welcome. */
+    /* Phones are small. Clamp handles the sizing. You're welcome. */
     .logo {
-      font-size: 12.5px;
-      line-height: 1.2;
+      line-height: 1.25;
     }
 
     .info { 
@@ -189,11 +189,15 @@
   <div class="top">
     <!-- ASCII art. Yes, handmade. And yes it took 40 mins. -->
     <div class="logo" role="img" aria-label="jorven ASCII Logo">
-   ___                  
-  |_ _|_ __ ___   __ _ 
-   | || '_ ` _ \ / _` |
-   | || | | | | | (_| |
-  |___|_| |_| |_|\__,_|</div>
+ ▄▄▄██▀▀▀▒█████   ██▀███   ██▒   █▓▓█████  ███▄    █
+   ▒██  ▒██▒  ██▒▓██ ▒ ██▒▓██░   █▒▓█   ▀  ██ ▀█   █
+   ░██  ▒██░  ██▒▓██ ░▄█ ▒ ▓██  █▒░▒███   ▓██  ▀█ ██▒
+▓██▄██▓ ▒██   ██░▒██▀▀█▄    ▒██ █░░▒▓█  ▄ ▓██▒  ▐▌██▒
+ ▓███▒  ░ ████▓▒░░██▓ ▒██▒   ▒▀█░  ░▒████▒▒██░   ▓██░
+ ▒▓▒▒░  ░ ▒░▒░▒░ ░ ▒▓ ░▒▓░   ░ ▐░  ░░ ▒░ ░░ ▒░   ▒ ▒
+ ▒ ░▒░    ░ ▒ ▒░   ░▒ ░ ▒░   ░ ░░   ░ ░  ░░ ░░   ░ ▒░
+ ░ ░ ░  ░ ░ ░ ▒    ░░   ░      ░░     ░      ░   ░ ░
+ ░   ░      ░ ░     ░           ░     ░  ░         ░</div>
 
     <!-- Personal info. Yes, it's all true. No, I won't tell you my password. -->
     <div class="info">
